@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="src/jquery.growing-inputs.js" type="text/javascript" charset="utf-8"></script>
+  <style type="text/css" media="screen">
+  </style>
+</head>
+<body>
+  
+  <div>
+    <h2>A normal Input</h2>
+    <input type="text" style="width: 100px;"></input>
+  </div>
+  
+  <div>
+    <h2>A growing Input</h2>
+    <input type="text" style="width: 100px; min-width: 100px;" growing></input>
+  </div>
+
+  <div>
+    <h2>A horizontally growing Textarea</h2>
+    <textarea style="width: 100px; min-width: 100px; height: 1em; overflow: hidden;" growing></textarea>
+  </div>
+
+  <div>
+    <h2>A vertically growing Textarea</h2>
+    <textarea style="width: 100px; height: 1em; overflow: hidden;" growing="y"></textarea>
+  </div>
+
+  <div>
+    <h2>A horizontally and vertically growing Textarea</h2>
+    <div style="background: #eee; width: 200px; padding: 20px;">
+      <textarea style="width: 100px; height: 1em; overflow: hidden;" growing></textarea>
+    </div>
+  </div>
+
+</body>
+</html>
