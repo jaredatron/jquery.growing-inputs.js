@@ -3,10 +3,16 @@
 <head>
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="https://github.com/deadlyicon/jquery.growing-inputs.js/raw/master/src/jquery.growing-inputs.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-context-min.css" type="text/css" media="screen" title="reset" charset="utf-8">
   <style type="text/css" media="screen">
+    input, textarea{
+      margin: 0;
+    }
   </style>
 </head>
 <body>
+
+  <h1>jquery.growing-inputs.js Examples</h1>
 
   <div>
     <h2>A normal Input</h2>
@@ -30,7 +36,7 @@
 
   <div>
     <h2>A horizontally and vertically growing Textarea</h2>
-    <div style="background: #eee; width: 200px; padding: 20px;">
+    <div style="background: #eee; width: 200px; border: 1px solid red">
       <textarea style="width: 100px; height: 1em; overflow: hidden;" growing></textarea>
     </div>
   </div>
