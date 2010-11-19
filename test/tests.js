@@ -149,13 +149,23 @@ $(document).ready(function(){
     var
       div = $('<div><textarea growing/></div>').appendTo('#inputs'),
       input = div.find('textarea'),
+      line_height = 13,
       empty_width,
       empty_height;
   
-    div.css({width: '200px', backgroundColor: 'red', marginBottom: '100px'})
-    input.css({width: 0, height: 'auto'}).val(' ').change();
+    div.css({
+      width: '200px',
+      backgroundColor: 'red',
+      marginBottom: '100px',
+      lineHeight: line_height+'px'
+    });
+    input.css({width: 0, height: 'auto'});
+
+    input.val('').change();
     empty_width  = input.width();
     empty_height = input.height();
+
+    expect(empty_height).toEqual(line_height);
   
     input.val('hello').change();
     width  = input.width();

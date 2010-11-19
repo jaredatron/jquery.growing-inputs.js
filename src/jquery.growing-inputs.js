@@ -37,7 +37,7 @@
 
   DOCUMENT
     // horiontal growth only
-    .delegate('input[type="text"][growing], input[type="password"][growing], textarea[growing="x"]', 'keyup change', function() {
+    .delegate('input[type="text"][growing], input[type="password"][growing], textarea[growing="x"]', 'keydown keyup change', function() {
       var
         input = $(this),
         value = input.val();
@@ -56,7 +56,7 @@
     })
 
     // vertical growth only
-    .delegate('textarea[growing="y"]', 'keyup change', function() {
+    .delegate('textarea[growing="y"]', 'keydown keyup change', function() {
       var
         input = $(this),
         value = input.val();
@@ -80,7 +80,7 @@
     })
 
     // growth in both directions
-    .delegate('textarea[growing=""], textarea[growing="growing"]', 'keyup change', function() {
+    .delegate('textarea[growing=""], textarea[growing="growing"]', 'keydown keyup change', function() {
       var
         input = $(this),
         value = input.val(),
@@ -102,12 +102,16 @@
         background: 'purple'
       });
       
-      var extra_width = span.text('.').width();
+      span.text('.')
+      var extra_width = span.width();
+      var min_height  = hidden.height();
+
       span.text(value);
+      var new_height = hidden.height();
 
       input.css({
         overflow: 'hidden',
-        height: hidden.height(),
+        height: new_height < min_height ? min_height : new_height,
         width:  span.width() + extra_width
       });
 
